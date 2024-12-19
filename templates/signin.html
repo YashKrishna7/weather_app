@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        
+        <title>SIGN IN PAGE</title>
+    </head>
+    <style>
+        body{
+            background-image: url({% static "images/greengrid.jpg" %});
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin:0;
+            height: 100vh;
+        }
+        form{
+            background-color: rgb(52, 52, 52);
+            background-size: cover;
+            width: 300px;
+            height: 350px;
+            padding: 10%;
+            border-radius: 10px;
+        }
+        h1{
+            color:rgb(120, 227, 249);
+            text-align: center;
+            
+        }
+        button{
+            color: black;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: rgb(52, 52, 52);
+            
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-left: -14px;
+        }
+        a{
+            margin-top:-37px;
+            margin-left: 250px;
+        }
+        
+        div{
+            padding-right: 46px;
+    
+        }
+    </style>
+    
+    <body class="bg-cover bg-center h-screen"style="background-image: url(https://images.pexels.com/photos/1438761/pexels-photo-1438761.jpeg?cs=srgb&dl=pexels-digitech-1438761.jpg&fm=jpg);">
+        
+        <div>
+            <form method="POST">
+                <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">SIGN IN</h1>
+                {% csrf_token %}
+                <input type="text"  id="username" name="username" placeholder="username"><br>
+                <br><input type="password" id="password" name="password" placeholder="password"><br>
+                <br><p style="color: aliceblue; position: relative;" >Forgot Password </p>
+                <a href="  {% url "signup"%} "    style="color:rgb(120, 227, 249);position: absolute;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;">Signup</a>
+                <br><button style="background-color:rgb(120, 227, 249)" type="submit">SignIn</button>
+            </form>
+        </div>
+        
+    </body>
+</html>
+    
+    
+    {% comment %} {% extends "home.html" %}
+    {% block content %} {% endcomment %}
+    {% comment %} <nav class="bg-gray-800 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 relative flex h-16 items-center justify-between " >
+    </nav>
+    <div class="ml-50 mb-60" >
+         <form class="max-w-sm mx-auto mt-30 pt-50">
+        <div class="mb-5">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+        <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" required />
+        </div>
+        <div class="mb-5">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+        <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
+        </div>
+        <div class="flex items-start mb-5">
+        <div class="flex items-center h-5">
+            <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+        </div>
+        <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+        </div>
+        <button type="submit">
+    </form>
+    </div>
+    {% endblock content %}
+       {% endcomment %}
